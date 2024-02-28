@@ -30,7 +30,7 @@ const NewsItem = ({title, description, src, url}) => {
       ) : (
         <div>{defaultDesc}</div>
       )}
-        <a href={url} className="btn btn-primary">Read More</a>
+        <a href={url && url} className="btn btn-primary">Read More</a>
       </div>
     </div>
   )

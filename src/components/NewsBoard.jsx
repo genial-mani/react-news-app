@@ -15,10 +15,10 @@ const NewsBoard = ({ category, country }) => {
   return (  
     <div className='news-board'>
       <h2 className="text-center text-light">
-        {category.charAt(0).toUpperCase()+category.slice(1)} <span className="badge bg-danger">News</span>
+        {category && category.charAt(0).toUpperCase()+category.slice(1)} <span className="badge bg-danger">News</span>
       </h2>
       <div className='all-news'>
-      {articles.map((news, index) => {
+      {articles && articles.map((news, index) => {
         if (news.url === 'https://removed.com') {
           return null;
         }
