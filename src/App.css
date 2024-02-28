@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background: transparent;
+}
+
+.navbar{
+  top: 0;
+  position: fixed;
+  background-color: rgba(167, 207, 211, 0.548);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  width: 100%;
+}
+
+
+
+.site-body{
+  padding-top: 80px;
+  background-image: url(assets/paul-volkmer-qVotvbsuM_c-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.navbar a,.navbar div{
+  color: white;
+}
+
+.navbar-brand:hover{
+  color: white;
+}
+
+.navbar a:hover,.nav-item .nav-link{
+  color: white;
+  cursor: pointer;
+}
+
+.ml-auto{
+  margin-left: auto;
+  margin-right: 150px;
+}
+
+.custom-toggler {
+  color: white;  /* Set the color to white */
+}
+
+
+.all-news{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  background-color: rgba(255, 255, 255, 0.132) !important; /* Glass background color with opacity */
+  backdrop-filter: blur(5px);
+}
+
+.card-body{
+  height: 275px;
+}
+
+.card-title{
+  min-height: 80px;
+}
+
+.card-text{
+  min-height: 100px;
+  line-height: 1.5;
+}  
+
+
+/*  */
+
+.slider {
+  height: 3px;
+  background-color: #ffcc00;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(0); /* Set initial position */
+  width: 50px; /* Set an initial width, adjust as needed */
+  transition: transform 0.3s ease, width 0.3s ease;
+}
