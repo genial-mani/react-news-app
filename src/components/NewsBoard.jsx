@@ -12,13 +12,29 @@ const NewsBoard = ({ category, country }) => {
           import.meta.env.VITE_API_KEY
         }`;
 
+        console.log("Fetching data from:", url);
+
         const res = await fetch(url);
+
+        if (res.status === 426) {
+          console.error(
+            "Upgrade Required: The server requires an upgrade to a different protocol."
+          );
+          return;
+        }
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch data. Status: ${res.status}`);
+        }
+
         const result = await res.json();
         const data = result.articles;
-        console.log(data)
+
+        console.log("Fetched data:", data);
+
         setArticles(data);
       } catch (error) {
-        console.error("Error fetching data: ", error);
+        console.error("Error fetching data:", error);
       }
     };
 
