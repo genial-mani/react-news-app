@@ -15,6 +15,7 @@ const NewsBoard = ({ category, country }) => {
         const res = await fetch(url);
         const result = await res.json();
         const data = result.articles;
+        console.log(data)
         setArticles(data);
       } catch (error) {
         console.error("Error fetching data: ", error);
