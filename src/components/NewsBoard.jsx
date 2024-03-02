@@ -7,14 +7,18 @@ const NewsBoard = ({ category, country }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${
-        import.meta.env.VITE_API_KEY
-      }`;
+      try {
+        let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${
+          import.meta.env.VITE_API_KEY
+        }`;
 
-      const res = await fetch(url);
-      const result = await res.json();
-      const data = result.articles;
-      setArticles(data);
+        const res = await fetch(url);
+        const result = await res.json();
+        const data = result.articles;
+        setArticles(data);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
     };
 
     fetchData();
