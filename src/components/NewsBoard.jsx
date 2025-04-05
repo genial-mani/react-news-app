@@ -12,6 +12,7 @@ const NewsBoard = ({ category, country }) => {
           import.meta.env.VITE_API_KEY
         }`;
 
+
         console.log("Fetching data from:", url);
 
         const res = await fetch(url);
